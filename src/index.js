@@ -19,7 +19,10 @@ const appointmentSchema = new schema.Entity("appointments", {
 });
 button.onclick = () => {
   const data = { appointment: { id: 21, addresses: null } };
+  // solution 1:
   //const result = normalize(data, new schema.Object( {appointment: appointmentSchema} ));
+
+  // solution 2:
   const result = normalize(data.appointment, appointmentSchema);
   console.log(result);
 };
